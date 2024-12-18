@@ -1,19 +1,22 @@
 import reactLogo from "./assets/react.svg";
-import altheaLogo from "./assets/althea-logo.png";
+import altheaLogo from "./assets/altheaLogo.png";
 import maquette from "./assets/maquette.png";
 import icon1 from "./assets/icon1.png";
-import icon2 from "./assets/icon2.png";
-import icon2bis from "./assets/icon2bis.png";
+import icon3 from "./assets/icon3.png";
+import icon3bis from "./assets/icon3bis.png";
 import icon4 from "./assets/icon4.png";
-import icon5 from "./assets/icon5.png";
+import icon2 from "./assets/icon2.png";
 import image1 from "./assets/image1.png";
 import image2 from "./assets/image2.png";
+import image3 from "./assets/image3.png";
+import FormSection from "./FormSection";
+import Footer from "./Footer";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <nav className="flex justify-between items-center px-32 py-5 bg-[color:--secondary-color]">
+      <nav className="flex justify-between items-center sm:px-32 px-4 py-5 bg-[color:--secondary-color]">
         <img src={altheaLogo} alt="React Logo" className="w-28" />
         <ul className="flex justify-around items-center text-[color:--secondary-text-color]">
           <li className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]">
@@ -46,7 +49,7 @@ function App() {
           </div>
           <div className="m-6">
             <button className="text-white border border-[color:--primary-color] bg-[color:--primary-color] rounded-md py-3 px-6 mx-3 cursor-pointer hover:border-[color:--tertiary-color] hover:bg-[--secondary-color] hover:text-[color:--tertiary-color] transition-all">
-              Appelez-nous
+              Prendre rendez-vous
             </button>
           </div>
         </div>
@@ -56,13 +59,6 @@ function App() {
             alt="Maquette"
             className="w-5/12 absolute bottom-0 m-auto left-0 right-0"
           />
-          <img src={icon1} alt="Icon 1" className="w-16 m-4 absolute" />
-          <div>
-            <img src={icon2} alt="Icon 2" className="w-16 m-4 absolute" />
-            <img src={icon2bis} alt="Icon 2bis" className="w-16 m-4 absolute" />
-          </div>
-          <img src={icon4} alt="Icon 4" className="w-16 m-4 absolute" />
-          <img src={icon5} alt="Icon 5" className="w-16 m-4 absolute" />
         </div>
       </section>
       {/**
@@ -280,9 +276,8 @@ function App() {
           </p>
         </div>
 
-        <div className="flex justify-around items-center relative pb-24">
+        <div className="flex justify-around items-center pb-24">
           <img src={image2} alt="" className="w-2/6" />
-          <img src={icon2} className="absolute left-20 bottom-16" />
           <div>
             <div className="flex items-center">
               <svg
@@ -355,253 +350,177 @@ function App() {
       {/**
        * SECTION
        */}
-      <section className="flex flex-col justify-center items-center bg-blue-100 pb-32">
-        <div>
+      <section className=" bg-[#f9f4ff] p-32">
+        <div className="grid grid-cols-2 pb-28">
           <div>
-            <p className="text-blue-600 font-medium py-2">
-              C'est quoi Althéa ?
+            <p className="text-[color:--primary-color] font-medium py-2">
+              À propos d’Althéa
             </p>
             <h3 className="font-semibold text-5xl">
-              Une application intuitive
+              Une solution pensée <br /> pour répondre à vos <br />
+              problématiques
             </h3>
-            <div>
-              <p className="font-light">
-                1. Inscrivez-vous gratuitement et complétez votre profil
-                professionnel.
+            <p className="text-gray-500 py-6 mb-9">
+              Althéa est une solution en cours de développement. <br />
+              Nous prenons le temps d’étudier les principaux défis rencontrés
+              par
+              <br />
+              les entreprises de services à la personne pour créer la solution
+              la
+              <br />
+              plus adaptée aux défis moderne du secteur
+            </p>
+          </div>
+          <img src={image3} alt="" className="rounded-xl" />
+        </div>
+        <div className="flex flex-col ">
+          <div className="text-center pb-4">
+            <p className="text-[color:--primary-color] font-medium py-2">
+              Notre objectif
+            </p>
+            <h3 className="font-semibold text-5xl">
+              Créer la solution la plus complète <br />
+              et la plus intuitive du marché
+            </h3>
+            <p className="py-6">
+              Vous proposer une gamme variée et adaptée <br /> de services
+              d’aide à domicile, incluant :
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center">
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">
+                Aide à domicile
               </p>
-              <p className="font-light">
-                2. Précisez vos disponibilités et vos zones d’intervention.
-              </p>
-              <p className="font-light">
-                3. Recevez des demandes et acceptez les missions qui vous
-                intéressent.
-              </p>
-              <p className="font-light">
-                4. Offrez des soins de qualité et construisez votre réputation.
+              <p className="text-gray-500">
+                Ménage, préparation des repas, courses, etc
               </p>
             </div>
-            <button className="text-blue-600 text-sm bg-none border border-blue-600 rounded-md py-3 px-6">
-              Découvrir notre l’expertise
-            </button>
-          </div>
-          <img src="" alt="" />
-        </div>
-        <div className="flex">
-          <div className="flex flex-col justify-center items-center p-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-14 bg-white text-blue-500 p-2 rounded-full"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-3xl font-bold text-blue-500 py-1">
-              100% sécurisé
-            </p>
-            <p className="text-gray-500">Sécurisé</p>
-          </div>
-          <div className="flex flex-col justify-center items-center p-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-14 bg-white text-blue-500 p-2 rounded-full"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-3xl font-bold text-blue-500 py-1">
-              Profils fiables
-            </p>
-            <p className="text-gray-500">
-              Des avis transparents
-              <br /> pour faire le bon choix
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center p-8">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-14 bg-white text-blue-500 p-2 rounded-full"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-3xl font-bold text-blue-500 py-1">
-              Simple d’accès
-            </p>
-            <p className="text-gray-500">
-              Une plateforme intuitive
-              <br /> et accessible à tous.
-            </p>
-          </div>
-        </div>
-        <div className="text-center w-3/4 pb-4">
-          <p className="text-blue-600 font-medium py-2">Services</p>
-          <h3 className="font-semibold text-5xl">Pour tout les besoins</h3>
-          <p className="py-6">
-            Accédez à une large gamme de professionnels qualifiés <br />
-            pour répondre à vos besoins spécifiques.
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center">
-          <div className="bg-white rounded-2xl w-96 p-10 m-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-16 bg-blue-100 text-blue-500 p-3 rounded-2xl"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-2xl font-semibold mt-7 mb-3">Aide à domicile</p>
-            <p className="text-gray-500">
-              We dejoy working with disning clients, people for whom qualuty,
-              service, integrity & aesthetics.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl w-96 p-10 m-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-16 bg-blue-100 text-blue-500 p-3 rounded-2xl"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-2xl font-semibold mt-7 mb-3">
-              Auxiliaire de vie
-            </p>
-            <p className="text-gray-500">
-              We dejoy working with disning clients, people for whom qualuty,
-              service, integrity & aesthetics.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl w-96 p-10 m-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-16 bg-blue-100 text-blue-500 p-3 rounded-2xl"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-2xl font-semibold mt-7 mb-3">Aide ménagère</p>
-            <p className="text-gray-500">
-              We dejoy working with disning clients, people for whom qualuty,
-              service, integrity & aesthetics.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl w-96 p-10 m-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-16 bg-blue-100 text-blue-500 p-3 rounded-2xl"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-2xl font-semibold mt-7 mb-3">
-              Infirmier(e) libérale
-            </p>
-            <p className="text-gray-500">
-              We dejoy working with disning clients, people for whom qualuty,
-              service, integrity & aesthetics.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl w-96 p-10 m-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-16 bg-blue-100 text-blue-500 p-3 rounded-2xl"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <p className="text-2xl font-semibold mt-7 mb-3">IDE</p>
-            <p className="text-gray-500">
-              We dejoy working with disning clients, people for whom qualuty,
-              service, integrity & aesthetics.
-            </p>
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">
+                Auxiliaire de vie
+              </p>
+              <p className="text-gray-500">
+                Spécialisé dans l’accompagnement des personnes en perte
+                d’autonomie
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">Aide ménagère</p>
+              <p className="text-gray-500">
+                Nettoyage, la lessive, et l’entretien de la maison
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">
+                Infirmier(e) libérale
+              </p>
+              <p className="text-gray-500">
+                Intervenant à domicile pour des soins médicaux prescrits
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">
+                Infirmier(e) Diplômé(e) d’État
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl w-96 p-10 m-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-16 bg-blue-100 text-[--primary-color] p-3 rounded-2xl"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <p className="text-2xl font-semibold mt-7 mb-3">
+                Autre professionnels
+              </p>
+            </div>
           </div>
         </div>
       </section>
       {/**
        * FOOTER
        */}
-      <footer className="bg-white">
-        <div className="">
-          <p className="text-[color:--primary-color] font-medium py-2">
-            Contact
-          </p>
-          <h3 className="font-semibold text-5xl">Intéressés ?</h3>
-          <div className="flex">
-            <p className="font-semibold text-5xl mr-2">Nous avons </p>
-            <p className="font-semibold text-5xl text-[color:--primary-color]">
-              besoin de vous.
-            </p>
-          </div>
-          <p className="text-gray-500 py-6">
-            Rejoignez nous pour co-construire la solution parfaite pour les
-            <br /> entreprises de services à la personne.
-          </p>
-          <div>
-            <div></div>
-            <div>
-              <p></p>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </footer>
+
+      <FormSection />
     </>
   );
 }
