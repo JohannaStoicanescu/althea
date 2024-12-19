@@ -6,7 +6,7 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    const back_end_url = process.env.BACKEND_URL || "http://localhost:3001";
+    const back_end_url = process.env.BACKEND_URL || "https://api.althea-assistance.fr";
     fetch(`${back_end_url}/contact`, {
       method: "POST",
       headers: {
