@@ -48,7 +48,10 @@ function App() {
             </p>
           </div>
           <div className="m-6">
-            <button className="text-white border border-[color:--primary-color] bg-[color:--primary-color] rounded-md py-3 px-6 mx-3 cursor-pointer hover:border-[color:--tertiary-color] hover:bg-[--secondary-color] hover:text-[color:--tertiary-color] transition-all">
+            <button
+              className="text-white border border-[color:--primary-color] bg-[color:--primary-color] rounded-md py-3 px-6 mx-3 cursor-pointer hover:border-[color:--tertiary-color] hover:bg-[--secondary-color] hover:text-[color:--tertiary-color] transition-all"
+              onClick={() => document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })}
+            >
               Prendre rendez-vous
             </button>
           </div>
@@ -520,7 +523,9 @@ function App() {
        * FOOTER
        */}
 
-      <FormSection />
+      <div id="contact-section">
+        <FormSection />
+      </div>
     </>
   );
 }
