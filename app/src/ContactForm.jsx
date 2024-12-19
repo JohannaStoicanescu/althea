@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const form = useRef();
@@ -7,12 +6,27 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_stw5o3t",
-      "template_vs15elp",
-      form.current,
-      "xx2HzIcm5a-qDtGjH"
-    );
+    const back_end_url = process.env.BACKEND_URL || "http://localhost:3001";
+    fetch(`${back_end_url}/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: e.target.email.value,
+        role: "",
+        origin: "site web",
+        text: e.target.text.value,
+      }),
+    });
+
+    // We'll come back to this later
+    // emailjs.sendForm(
+    //   "service_stw5o3t",
+    //   "template_vs15elp",
+    //   form.current,
+    //   "xx2HzIcm5a-qDtGjH"
+    // );
 
     e.target.reset();
   };
@@ -37,7 +51,7 @@ const ContactForm = () => {
         id="text"
         type="text"
         maxLength={1000}
-        placeholder="Expliquez-nous brièvement les problèmes auxquelles vous faites face au quotidien..."
+        placeholder="Expliquez-nous brièvement les problèmes auxquels vous faites face au quotidien..."
         className="border border-slate-200 rounded-md my-3 py-2 px-5 h-36  hover:border-[color:--tertiary-color] focus:border-[color:--secondary-color] transition-all"
       />
       <button
