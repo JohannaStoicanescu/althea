@@ -1,0 +1,39 @@
+services:
+  althea:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - CONTACT_BACK_URI=http://contact_back:3001
+    restart: unless-stopped
+
+  contact_back:
+    build:
+      context: ./contact_back
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3001:3001
+    environment:
+      - MONGO_URI=mongodb://root:WiNs3nZ5Xj0SqZd64KwycAd9QW7v1OB2@mongo:27017/
+
+  mongo:
+    image: mongo:6-jammy
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: WiNs3nZ5Xj0SqZd64KwycAd9QW7v1OB2
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: Vd3x3grz84UhFeFXOtY6Kx96RWvbRT6v
+      ME_CONFIG_MONGODB_URL: mongodb://root:WiNs3nZ5Xj0SqZd64KwycAd9QW7v1OB2@mongo:27017/
+      ME_CONFIG_BASICAUTH: false

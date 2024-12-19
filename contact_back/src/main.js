@@ -1,5 +1,6 @@
 const { Schema, default: mongoose } = require('mongoose');
 const express = require('express');
+const cors = require('cors');
 
 const ContactDataSchema = new Schema({
   email: String,
@@ -30,6 +31,15 @@ async function main() {
 
   const app = express();
   app.use(express.json());
+
+  // cors
+  app.options('*', cors());
+  app.use(cors({
+    origin: 'https://althea-assistance.fr',
+    methods: ['POST', 'OPTIONS'],
+    credentials: true,
+  }));
+
   app.post('/contact', handleContactDataUpload);
   app.listen(3001, () => {
     console.log('Server is running on port 3001');
