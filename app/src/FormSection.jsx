@@ -31,10 +31,10 @@ const FormSection = () => {
             <div className="pl-6">
               <p className="mb-2">Téléphone</p>
               <a
-                href="tel:+33767300833"
-                className="text-[color:--secondary-text-color] hover:text-[color:--tertiary-color] transition-all"
+                href="tel:+33663722417"
+                className="text-[color:--secondary-text-color] hover:text-[color:--tertiary-color] cursor-pointer transition-all"
               >
-                +33 7 67 30 08 33
+                +33 6 63 72 24 17
               </a>
               <p className="text-[color:--secondary-text-color]"></p>
             </div>

@@ -15,15 +15,15 @@ const Footer = () => {
             <FiPhoneCall className="text-[color:--primary-color]" />
           </div>
           <a
-            href="tel:+33767300833"
-            className="hover:text-[color:--tertiary-color] cursor-pointer"
+            href="tel:+33663722417"
+            className="hover:text-[color:--tertiary-color] cursor-pointer transition-all relative z-10"
           >
             Nous appeler
           </a>
         </div>
       </div>
       <p className="text-gray-500 mt-10 small:mt-0">© 2024 Althéa.</p>
-      <div className="absolute -bottom-20 -left-5 rotate-12">
+      <div className="absolute -bottom-20 -left-5 rotate-12 z-0">
         <img src={icon1} alt="icon1" className="w-72" />
       </div>
     </footer>

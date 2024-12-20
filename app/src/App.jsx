@@ -33,10 +33,24 @@ function App() {
       <nav className="flex justify-between items-end sm:px-32 px-4 py-5 bg-[color:--secondary-color]">
         <img src={altheaLogo} alt="React Logo" className="w-20 small:w-28" />
         <ul className="flex justify-around items-center text-[color:--secondary-text-color] text-sm">
-          <li className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]">
+          <li
+            onClick={() =>
+              document
+                .getElementById("solution-section")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]"
+          >
             Notre solution
           </li>
-          <li className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]">
+          <li
+            onClick={() =>
+              document
+                .getElementById("about-section")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]"
+          >
             À propos
           </li>
         </ul>
@@ -97,7 +111,10 @@ function App() {
        * SECTION2
        */}
       <section className="flex flex-col justify-center items-center px-4">
-        <div className="flex flex-col justify-center items-start sm:items-center py-20">
+        <div
+          id="solution-section"
+          className="flex flex-col justify-center items-start sm:items-center py-20"
+        >
           <p className="text-[color:--primary-color] font-medium py-2">
             Notre solution
           </p>
@@ -263,7 +280,10 @@ function App() {
       {/**
        * SECTION
        */}
-      <section className=" bg-[#f9f4ff] p-4 py-32 sm:p-12 md:p-32">
+      <section
+        id="about-section"
+        className=" bg-[#f9f4ff] p-4 py-32 sm:p-12 md:p-32"
+      >
         <div className="lg:grid lg:grid-cols-2 pb-28">
           <div>
             <p className="text-[color:--primary-color] font-medium py-2">
@@ -276,7 +296,7 @@ function App() {
               Althéa est une solution en cours de développement. Nous prenons le
               temps d’étudier les principaux défis rencontrés par les
               entreprises de services à la personne pour créer la solution la
-              plus adaptée aux défis moderne du secteur
+              plus adaptée aux défis moderne du secteur.
             </p>
           </div>
           <img src={image3} alt="" className="rounded-xl lg:m-4" />
