@@ -25,13 +25,14 @@ import image3 from "./assets/image3.png";
 
 import FormSection from "./FormSection";
 import "./App.css";
+import Footer from "./Footer";
 
 function App() {
   return (
     <div className="w-screen">
-      <nav className="flex justify-between items-center sm:px-32 px-4 py-5 bg-[color:--secondary-color]">
-        <img src={altheaLogo} alt="React Logo" className="w-28" />
-        <ul className="flex justify-around items-center text-[color:--secondary-text-color]">
+      <nav className="flex justify-between items-end sm:px-32 px-4 py-5 bg-[color:--secondary-color]">
+        <img src={altheaLogo} alt="React Logo" className="w-20 small:w-28" />
+        <ul className="flex justify-around items-center text-[color:--secondary-text-color] text-sm">
           <li className="mx-4 cursor-pointer hover:text-[color:--tertiary-color]">
             Notre solution
           </li>
@@ -43,12 +44,12 @@ function App() {
       {/**
        * SECTION1
        */}
-      <section className="flex flex-col items-start md:items-center bg-[color:--secondary-color]">
+      <section className="flex flex-col items-start md:items-center bg-[color:--secondary-color] relative overflow-hidden">
         <div className="px-4 pt-28 pb-12">
           <div className="md:text-center">
-            <h3 className="font-semibold text-6xl">
+            <h3 className="font-semibold text-4xl small:text-5xl sm:text-6xl">
               La solution de gestion de
-              <p className="text-[color:--primary-color] font-semibold text-6xl m-2">
+              <p className="text-[color:--primary-color] font-semibold text-4xl small:text-5xl sm:text-6xl m-2">
                 services à la personne
               </p>
             </h3>
@@ -73,11 +74,23 @@ function App() {
           </div>
         </div>
         <div className="w-screen pt-5 bg-[color:--secondary-color]">
-          <img
-            src={maquette}
-            alt="Maquette"
-            className="w-10/12 sm:w-5/12 m-auto left-0 right-0 rounded-t-2xl"
-          />
+          <div className="w-10/12 sm:w-5/12 m-auto left-0 right-0 rounded-t-2xl relative z-10">
+            <img src={maquette} alt="Maquette" />
+          </div>
+          <div className="absolute z-0 -left-10 -bottom-5 lg:-bottom-10 rotate-12 opacity-10">
+            <img
+              src={icon1}
+              alt=""
+              className="w-72 md:w-96 lg:w-110 xl:w-128"
+            />
+          </div>
+          <div className="absolute z-0 opacity-10 -right-10 bottom-0 md:bottom-28 lg:bottom-40 large:bottom-48 xl:bottom-60">
+            <img
+              src={icon2}
+              alt=""
+              className="w-72 md:w-96 lg:w-110 xl:w-150"
+            />
+          </div>
         </div>
       </section>
       {/**
@@ -88,7 +101,7 @@ function App() {
           <p className="text-[color:--primary-color] font-medium py-2">
             Notre solution
           </p>
-          <h3 className="font-semibold text-5xl sm:text-center max-w-4xl">
+          <h3 className="font-semibold text-3xl small:text-4xl sm:text-5xl sm:text-center max-w-4xl">
             Gérer une entreprise de services à la personne n'a jamais été aussi
             simple
           </h3>
@@ -141,7 +154,7 @@ function App() {
           <p className="text-[color:--primary-color] font-medium py-2">
             Pour l'entreprise
           </p>
-          <h3 className="font-semibold text-5xl sm:text-center max-w-2xl">
+          <h3 className="font-semibold text-3xl small:text-4xl sm:text-5xl sm:text-center max-w-2xl">
             Gagnez du temps et renforcez la satisfaction client
           </h3>
           <p className="text-gray-500 py-6 sm:text-center max-w-lg">
@@ -151,7 +164,7 @@ function App() {
         </div>
 
         <div className="flex flex-col-reverse md:flex-row justify-around items-center">
-          <div>
+          <div className="mt-4">
             <div className="flex items-center">
               <MdAccessTime className="size-9 bg-[color:--secondary-color] text-[color:--primary-color] p-1 rounded-full" />
               <h3 className="font-semibold text-2xl ml-8">Gagnez du temps </h3>
@@ -185,18 +198,21 @@ function App() {
               préférences et répondez rapidement à leurs besoins.
             </p>
           </div>
-          <img
-            src={image1}
-            alt=""
-            className="w-full small:w-3/4 mb-8 sm:m-0 sm:w-1/3"
-          />
+          <div className="w-full small:w-3/4 mb-8 sm:mb-4 sm:w-1/3 relative">
+            <img
+              src={icon2}
+              alt=""
+              className="w-40 sm:w-24 md:w-40 absolute -bottom-9 sm:-bottom-5 md:-bottom-9 -right-0"
+            />
+            <img src={image1} alt="" />
+          </div>
         </div>
 
         <div className="flex flex-col justify-center items-start sm:items-center py-20">
           <p className="text-[color:--primary-color] font-medium py-2 text-center">
             Pour les professionnels de la santé
           </p>
-          <h3 className="font-semibold text-5xl sm:text-center max-w-lg">
+          <h3 className="font-semibold text-3xl small:text-4xl sm:text-5xl sm:text-center max-w-lg">
             Concentrez vous sur vos clients
           </h3>
           <p className="text-gray-500 py-6 sm:text-center max-w-96">
@@ -206,12 +222,15 @@ function App() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-around items-center pb-24">
-          <img
-            src={image2}
-            alt=""
-            className="w-full small:w-3/4 mb-8 sm:m-0 sm:w-1/3"
-          />
-          <div>
+          <div className="w-full small:w-3/4 mb-8 sm:mb-4 sm:w-1/3 relative">
+            <img
+              src={icon3}
+              alt=""
+              className="absolute -bottom-11 -left-4 sm:-bottom-5 md:-bottom-11 w-24 sm:w-12 md:w-24 "
+            />
+            <img src={image2} alt="" className="" />
+          </div>
+          <div className="mt-4">
             <div className="flex items-center">
               <LiaUserCheckSolid className="size-9 bg-[color:--secondary-color] text-[color:--primary-color] p-1 rounded-full" />
               <h3 className="font-semibold text-2xl ml-8">
@@ -250,7 +269,7 @@ function App() {
             <p className="text-[color:--primary-color] font-medium py-2">
               À propos d’Althéa
             </p>
-            <h3 className="font-semibold text-5xl max-w-lg">
+            <h3 className="font-semibold text-3xl small:text-4xl sm:text-5xl max-w-lg">
               Une solution pensée pour répondre à vos problématiques
             </h3>
             <p className="text-gray-500 py-6 mb-9 max-w-xl">
@@ -267,7 +286,7 @@ function App() {
             <p className="text-[color:--primary-color] font-medium py-2 sm:text-center">
               Notre objectif
             </p>
-            <h3 className="font-semibold text-5xl sm:text-center max-w-3xl">
+            <h3 className="font-semibold text-3xl small:text-4xl sm:text-5xl sm:text-center max-w-3xl">
               Créer la solution la plus complète et la plus intuitive du marché
             </h3>
             <p className="text-gray-500 py-6 sm:text-center max-w-md">
@@ -331,6 +350,7 @@ function App() {
       <div id="contact-section">
         <FormSection />
       </div>
+      <Footer />
     </div>
   );
 }
