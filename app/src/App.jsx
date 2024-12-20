@@ -89,7 +89,7 @@ function App() {
         </div>
         <div className="w-screen pt-5 bg-[color:--secondary-color]">
           <div className="w-10/12 sm:w-5/12 m-auto left-0 right-0 rounded-t-2xl relative z-10">
-            <img src={maquette} alt="Maquette" />
+            <img className="rounded-xl" src={maquette} alt="Maquette" />
           </div>
           <div className="absolute z-0 -left-10 -bottom-5 lg:-bottom-10 rotate-12 opacity-10">
             <img
